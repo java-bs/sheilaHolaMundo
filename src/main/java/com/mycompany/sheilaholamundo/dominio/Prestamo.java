@@ -25,6 +25,46 @@ public class Prestamo {
         return true;
     }
     public void cancelarPrestamo(){
-    
     }
+
+    public BigDecimal getMonto() {
+        return monto;
+    }
+
+    public void setMonto(BigDecimal monto) {
+        this.monto = monto;
+    }
+
+    public Integer getPlazoEnMeses() {
+        return plazoEnMeses;
+    }
+
+    public void setPlazoEnMeses(Integer plazoEnMeses) {
+        this.plazoEnMeses = plazoEnMeses;
+    }
+
+    public Integer getCantidadCuotas() {
+        return cantidadCuotas;
+    }
+
+    public void setCantidadCuotas(Integer cantidadCuotas) {
+        this.cantidadCuotas = cantidadCuotas;
+    }
+
+    public BigDecimal getTasa() {
+        return tasa;
+    }
+
+    public void setTasa(BigDecimal tasa) {
+        this.tasa = tasa;
+    }
+
+    public List<DocumentoDigital> getDocumentos() {
+        return documentos;
+    }
+
+    public void setDocumentos(List<DocumentoDigital> documentos) {
+        this.documentos = documentos;
+    }
+    
 }

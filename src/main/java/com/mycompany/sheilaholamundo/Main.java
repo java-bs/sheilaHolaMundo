@@ -5,6 +5,9 @@
  */
 package com.mycompany.sheilaholamundo;
 
+import com.mycompany.sheilaholamundo.dominio.Prestamo;
+import java.math.BigDecimal;
+
 /**
  *
  * @author baron1319
@@ -19,6 +22,13 @@ public class Main {
         // TODO code application logic here
         setTexto("Mundo, Hola!!!!");
         System.out.println(getTexto());
+        Prestamo p = new Prestamo();
+        p.setCantidadCuotas(12);
+        p.setMonto(new BigDecimal(1000000));
+        p.setTasa(new BigDecimal(30.45));
+        p.setPlazoEnMeses(5);
+        
+        
         
     }
     private static String getTexto(){
