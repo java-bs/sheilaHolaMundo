@@ -22,6 +22,18 @@ public class Cliente {
     private List<Prestamo> prestamos;
     
     
+    public String toString(){
+    String s;
+        s = "Nombre: " + this.nombre;
+        s += "\nApellido; "+ this.apellido;
+        s += "\nDNI; "+ this.dni;
+        return s;
+    }
+    public Cliente(String nombre, String apellido, String dni){
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
     public void cambiarDomicilio (Domicilio nuevoDomicilio){
         setDomicilio(nuevoDomicilio);
     }

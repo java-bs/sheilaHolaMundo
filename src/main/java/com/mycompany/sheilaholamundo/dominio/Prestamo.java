@@ -13,14 +13,24 @@ import java.util.List;
  * @author baron1319
  */
 public class Prestamo {
-    private BigDecimal monto;
+    private final BigDecimal monto;
     private Integer plazoEnMeses;
     private Integer cantidadCuotas;
     private BigDecimal tasa;
     private List<DocumentoDigital> documentos;
     
-    
-    
+    public Prestamo(BigDecimal monto,Integer cuotas){
+        this.monto = monto;
+        this.cantidadCuotas = cuotas;
+    }
+    public String toString(){
+        String s;
+        s = "Monto; "+ this.monto;
+        s += "\nCantidad de cuaotas; "+ this.cantidadCuotas;
+        s += "\nTasa; "+ this.tasa;
+
+        return s;
+    }
     public Boolean cancelaCuotas(Integer Cantidad){
         return true;
     }
@@ -31,9 +41,7 @@ public class Prestamo {
         return monto;
     }
 
-    public void setMonto(BigDecimal monto) {
-        this.monto = monto;
-    }
+
 
     public Integer getPlazoEnMeses() {
         return plazoEnMeses;
