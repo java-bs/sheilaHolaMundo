@@ -6,6 +6,7 @@
 package com.mycompany.sheilaholamundo.dominio;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +22,9 @@ public class Cliente {
     private DocumentoDigital dniDigital;
     private List<Prestamo> prestamos;
     
-    
+    public void agregarPrestamo(Prestamo p){
+    this.prestamos.add(p);
+    }
     public String toString(){
     String s;
         s = "Nombre: " + this.nombre;
@@ -33,6 +36,7 @@ public class Cliente {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.prestamos = new ArrayList<Prestamo>();
     }
     public void cambiarDomicilio (Domicilio nuevoDomicilio){
         setDomicilio(nuevoDomicilio);
