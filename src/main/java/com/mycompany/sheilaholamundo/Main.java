@@ -8,6 +8,7 @@ package com.mycompany.sheilaholamundo;
 import com.mycompany.sheilaholamundo.dominio.Banco;
 import com.mycompany.sheilaholamundo.dominio.Cliente;
 import com.mycompany.sheilaholamundo.dominio.Prestamo;
+import com.mycompany.sheilaholamundo.dominio.PrestamoPersonal;
 import java.math.BigDecimal;
 
 /**
@@ -27,13 +28,13 @@ public class Main {
         
         
      
-        Banco.obtener("Banco Saenz 277");
-        System.out.println("Imprimo Banco Sanez: " + Banco.bancoToString());
+        Banco saenz = Banco.obtener("Banco Saenz 277");
+        System.out.println("Imprimo Banco Sanez: " + saenz.bancoToString());
        
-        Banco.obtener("Banco itau 052");
-        System.out.println("Imprimo Banco Itau: " + Banco.bancoToString());
+        Banco itau = Banco.obtener("Banco itau 052");
+        System.out.println("Imprimo Banco Itau: " + itau.bancoToString());
         
-        Prestamo p = new Prestamo(new BigDecimal(1000000),12);
+        PrestamoPersonal p = new PrestamoPersonal(new BigDecimal(1000000),12);
         p.setTasa(new BigDecimal(30.45));
         p.setPlazoEnMeses(5);
         Cliente c1 = new Cliente("Sheila","Baron","321654987");

@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author baron1319
  */
-public class Prestamo {
+public abstract class Prestamo {
     private final BigDecimal monto;
     private Integer plazoEnMeses;
     private Integer cantidadCuotas;
