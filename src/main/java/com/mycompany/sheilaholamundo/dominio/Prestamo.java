@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author baron1319
  */
-public abstract class Prestamo {
+public abstract class Prestamo implements ImprimirDatos{
     private final BigDecimal monto;
     private Integer plazoEnMeses;
     private Integer cantidadCuotas;
@@ -23,6 +23,16 @@ public abstract class Prestamo {
         this.monto = monto;
         this.cantidadCuotas = cuotas;
     }
+    
+    @Override
+    public void imprimorDatos() {
+                String s;
+        s = "Monto; "+ this.monto;
+        s += "\nCantidad de cuaotas; "+ this.cantidadCuotas;
+        s += "\nTasa; "+ this.tasa;
+        System.out.println("Prestamo\n"+s);
+    }
+    
     public String toString(){
         String s;
         s = "Monto; "+ this.monto;

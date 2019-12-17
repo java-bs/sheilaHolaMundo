@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author baron1319
  */
-public class Cliente {
+public class Cliente implements ImprimirDatos{
     private String dni;
     private String nombre;
     private String apellido;
@@ -40,6 +40,19 @@ public class Cliente {
     }
     public void cambiarDomicilio (Domicilio nuevoDomicilio){
         setDomicilio(nuevoDomicilio);
+    }
+    
+    @Override
+    public void imprimorDatos() {
+        String s;
+        s = "Nombre: " + this.nombre;
+        s += "\nApellido; "+ this.apellido;
+        s += "\nDNI; "+ this.dni;
+        System.out.println(s+"\nLos Prestamos");
+        for(Prestamo prestamo : this.prestamos  ){
+            prestamo.imprimorDatos();
+        }
+        
     }
     public void actualizarIngresos(DocumentoDigital recibo, BigDecimal monto){
         setIngreso(monto);
@@ -100,6 +113,8 @@ public class Cliente {
     public void setPrestamos(List<Prestamo> prestamos) {
         this.prestamos = prestamos;
     }
+
+
     
     
 }

@@ -16,5 +16,13 @@ public class PrestamoPersonal extends Prestamo{
     public PrestamoPersonal(BigDecimal monto, Integer cuotas) {
         super(monto, cuotas);
     }
+
+    @Override
+    public void imprimorDatos() {
+        System.out.println("Prestamo Personal"
+        + "\nMonto: "  + this.getMonto()
+        + "\nCuotas: " + this.getCantidadCuotas()
+        + "\nImprimir en "+ COLORPRINCIPAL );
+    }
     
 }
