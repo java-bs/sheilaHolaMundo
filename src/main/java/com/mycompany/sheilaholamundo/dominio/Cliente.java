@@ -7,6 +7,7 @@ package com.mycompany.sheilaholamundo.dominio;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -49,6 +50,7 @@ public class Cliente implements ImprimirDatos{
         s += "\nApellido; "+ this.apellido;
         s += "\nDNI; "+ this.dni;
         System.out.println(s+"\nLos Prestamos");
+        this.prestamos.sort(Comparator.comparing(Prestamo::getFechaAcreditación));
         for(Prestamo prestamo : this.prestamos  ){
             prestamo.imprimorDatos();
         }

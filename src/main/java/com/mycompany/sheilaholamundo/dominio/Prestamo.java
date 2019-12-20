@@ -6,6 +6,7 @@
 package com.mycompany.sheilaholamundo.dominio;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -18,6 +19,24 @@ public abstract class Prestamo implements ImprimirDatos{
     private Integer cantidadCuotas;
     private BigDecimal tasa;
     private List<DocumentoDigital> documentos;
+    private LocalDate fechaAdjudicacion;
+    private LocalDate fechaAcreditación;
+
+    public LocalDate getFechaAdjudicacion() {
+        return fechaAdjudicacion;
+    }
+
+    public void setFechaAdjudicacion(LocalDate fechaAdjudicacion) {
+        this.fechaAdjudicacion = fechaAdjudicacion;
+    }
+
+    public LocalDate getFechaAcreditación() {
+        return fechaAcreditación;
+    }
+
+    public void setFechaAcreditación(LocalDate fechaAcreditación) {
+        this.fechaAcreditación = fechaAcreditación;
+    }
     
     public Prestamo(BigDecimal monto,Integer cuotas){
         this.monto = monto;
@@ -30,6 +49,7 @@ public abstract class Prestamo implements ImprimirDatos{
         s = "Monto; "+ this.monto;
         s += "\nCantidad de cuaotas; "+ this.cantidadCuotas;
         s += "\nTasa; "+ this.tasa;
+        s += "\nFecha de Acreditacion: " + this.fechaAcreditación;
         System.out.println("Prestamo\n"+s);
     }
     

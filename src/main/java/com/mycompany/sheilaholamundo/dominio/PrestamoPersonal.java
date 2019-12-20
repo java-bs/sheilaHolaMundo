@@ -22,7 +22,8 @@ public class PrestamoPersonal extends Prestamo{
         System.out.println("Prestamo Personal"
         + "\nMonto: "  + this.getMonto()
         + "\nCuotas: " + this.getCantidadCuotas()
-        + "\nImprimir en "+ COLORPRINCIPAL );
+        + "\nImprimir en "+ COLORPRINCIPAL 
+        + "\nFecha de Acreditacion: " + this.getFechaAcreditación());
     }
     
 }

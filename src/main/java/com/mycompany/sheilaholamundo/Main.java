@@ -10,6 +10,9 @@ import com.mycompany.sheilaholamundo.dominio.Cliente;
 import com.mycompany.sheilaholamundo.dominio.PrestamoPersonal;
 import com.mycompany.sheilaholamundo.dominio.PrestamoPrendario;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.Month;
+
 
 /**
  *
@@ -37,9 +40,11 @@ public class Main {
         PrestamoPersonal p = new PrestamoPersonal(new BigDecimal(1000000),12);
         p.setTasa(new BigDecimal(30.45));
         p.setPlazoEnMeses(5);
+        p.setFechaAcreditación( LocalDate.of(2019,3,16) );
         Cliente c1 = new Cliente("Sheila","Baron","321654987");
         c1.agregarPrestamo(p);
         PrestamoPrendario pp = new PrestamoPrendario(new BigDecimal(30000), 6);
+        pp.setFechaAcreditación( LocalDate.of(2018,3,16) );
         c1.agregarPrestamo(pp);
         pp.setTasa(new BigDecimal(0.335));
         
