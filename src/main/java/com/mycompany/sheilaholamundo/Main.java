@@ -12,22 +12,25 @@ import com.mycompany.sheilaholamundo.dominio.PrestamoPrendario;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 /**
  *
  * @author baron1319
  */
+@SpringBootApplication
 public class Main {
+    public static void main(String[] parametros) {
+    
+        SpringApplication.run(Main.class, parametros);
 
-    static String texto;
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+        String texto;
+   
         // TODO code application logic here
-        setTexto("Mundo, Hola!!!!");
-        System.out.println(getTexto());
+        texto = "Mundo, Hola!!!!";
+        System.out.println(texto);
         
         
      
@@ -40,11 +43,11 @@ public class Main {
         PrestamoPersonal p = new PrestamoPersonal(new BigDecimal(1000000),12);
         p.setTasa(new BigDecimal(30.45));
         p.setPlazoEnMeses(5);
-        p.setFechaAcreditación( LocalDate.of(2019,3,16) );
+        p.setFechaAcreditacion( LocalDate.of(2019,3,16) );
         Cliente c1 = new Cliente("Sheila","Baron","321654987");
         c1.agregarPrestamo(p);
         PrestamoPrendario pp = new PrestamoPrendario(new BigDecimal(30000), 6);
-        pp.setFechaAcreditación( LocalDate.of(2018,3,16) );
+        pp.setFechaAcreditacion( LocalDate.of(2018,3,16) );
         c1.agregarPrestamo(pp);
         pp.setTasa(new BigDecimal(0.335));
         
@@ -56,12 +59,7 @@ public class Main {
         
         
     }
-    private static String getTexto(){
-    return Main.texto;
-    }
-    private static void setTexto(String s){
-    Main.texto =  s;
-    }
+   
 
     
 }

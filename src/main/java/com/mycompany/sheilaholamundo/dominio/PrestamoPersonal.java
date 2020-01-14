@@ -23,7 +23,7 @@ public class PrestamoPersonal extends Prestamo{
         + "\nMonto: "  + this.getMonto()
         + "\nCuotas: " + this.getCantidadCuotas()
         + "\nImprimir en "+ COLORPRINCIPAL 
-        + "\nFecha de Acreditacion: " + this.getFechaAcreditación());
+        + "\nFecha de Acreditacion: " + this.getFechaAcreditacion());
     }
     
 }

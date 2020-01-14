@@ -16,5 +16,13 @@ public class PrestamoPrendario extends Prestamo{
     public PrestamoPrendario(BigDecimal monto, Integer cuotas) {
         super(monto, cuotas);
     }
+
+    public static String getCOLORPRINCIPAL() {
+        return COLORPRINCIPAL;
+    }
+
+    public static String getCOLORSECUNDARIO() {
+        return COLORSECUNDARIO;
+    }
     
 }

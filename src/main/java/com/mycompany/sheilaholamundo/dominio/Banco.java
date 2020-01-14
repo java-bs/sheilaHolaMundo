@@ -34,4 +34,13 @@ public class Banco {
     public String getCogigo(){
         return this.codigo;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public static Banco getInstance() {
+        return instance;
+    }
+    
 }

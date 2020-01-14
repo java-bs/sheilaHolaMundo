@@ -8,7 +8,9 @@ package com.mycompany.sheilaholamundo.dominio;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.time.*;
 import java.util.List;
+
 
 /**
  *
@@ -50,7 +52,12 @@ public class Cliente implements ImprimirDatos{
         s += "\nApellido; "+ this.apellido;
         s += "\nDNI; "+ this.dni;
         System.out.println(s+"\nLos Prestamos");
-        this.prestamos.sort(Comparator.comparing(Prestamo::getFechaAcreditación));
+        this.prestamos.sort(Comparator.comparing(Prestamo::getFechaAcreditacion));
+        
+        this.prestamos.stream()
+                .filter(prestamo -> prestamo.getFechaAcreditacion() != null)
+                .filter(p -> p.getFechaAcreditacion().isBefore(LocalDate.now()))
+                .forEach(prestamo -> prestamo.imprimorDatos());
         for(Prestamo prestamo : this.prestamos  ){
             prestamo.imprimorDatos();
         }
@@ -114,6 +121,14 @@ public class Cliente implements ImprimirDatos{
 
     public void setPrestamos(List<Prestamo> prestamos) {
         this.prestamos = prestamos;
+    }
+
+    public static String getCOLORPRINCIPAL() {
+        return COLORPRINCIPAL;
+    }
+
+    public static String getCOLORSECUNDARIO() {
+        return COLORSECUNDARIO;
     }
 
 

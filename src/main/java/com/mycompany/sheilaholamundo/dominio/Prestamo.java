@@ -20,7 +20,7 @@ public abstract class Prestamo implements ImprimirDatos{
     private BigDecimal tasa;
     private List<DocumentoDigital> documentos;
     private LocalDate fechaAdjudicacion;
-    private LocalDate fechaAcreditación;
+    private LocalDate fechaAcreditacion;
 
     public LocalDate getFechaAdjudicacion() {
         return fechaAdjudicacion;
@@ -30,12 +30,12 @@ public abstract class Prestamo implements ImprimirDatos{
         this.fechaAdjudicacion = fechaAdjudicacion;
     }
 
-    public LocalDate getFechaAcreditación() {
-        return fechaAcreditación;
+    public LocalDate getFechaAcreditacion() {
+        return fechaAcreditacion;
     }
 
-    public void setFechaAcreditación(LocalDate fechaAcreditación) {
-        this.fechaAcreditación = fechaAcreditación;
+    public void setFechaAcreditacion(LocalDate fechaAcreditacion) {
+        this.fechaAcreditacion = fechaAcreditacion;
     }
     
     public Prestamo(BigDecimal monto,Integer cuotas){
@@ -49,7 +49,7 @@ public abstract class Prestamo implements ImprimirDatos{
         s = "Monto; "+ this.monto;
         s += "\nCantidad de cuaotas; "+ this.cantidadCuotas;
         s += "\nTasa; "+ this.tasa;
-        s += "\nFecha de Acreditacion: " + this.fechaAcreditación;
+        s += "\nFecha de Acreditacion: " + this.fechaAcreditacion;
         System.out.println("Prestamo\n"+s);
     }
     
